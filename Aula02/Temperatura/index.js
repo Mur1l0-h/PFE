@@ -11,12 +11,10 @@ function CalcularTemp(){
 
         if(!inputValor){
             resposta.innerHTML = "Não foi recebido um valor válido!"
-            console.log(inputValor);
-            console.log("qasdasd");
             return
         }
 
-        let calculo = Math.floor(5/9 * (inputValor + 32));
+        let calculo = (inputValor * 1.8) + 32;
         resposta.innerHTML = calculo.toString()
 
         if(calculo > 80){
