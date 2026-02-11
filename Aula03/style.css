@@ -1,0 +1,30 @@
+.nome{
+    height: 600px;
+    width: 800px;
+    background-color: #481247;
+}
+
+.nome2{
+    height: 180px;
+    width: 700px;
+    background-color:yellow ;
+    border: 2px solid #000;
+}
+.nome3{
+    height: 180px;
+    width: 700px;
+    background-color: cadetblue;
+    border: 2px solid #000;
+}
+.nome4{
+    height: 180px;
+    width: 700px;
+    background-color: wheat;
+    border: 2px solid #000;
+}
+.nome5{
+    height: 80px;
+    width: 90px;
+    background-color:blueviolet;
+    border: 2px solid #000;
+}

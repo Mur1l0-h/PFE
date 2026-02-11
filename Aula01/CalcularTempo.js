@@ -13,12 +13,12 @@ function CalcularTempoCompromisso(diaRecebido){
     
     let DiaDeHoje = new Date().getTime();
     
-    
+        
     let DiaRecebido = new Date(diaRecebido).getTime(); // YYYY-MM-DD
     
     let diff_ms = Math.abs(DiaRecebido - DiaDeHoje);
     
-    let converter_ms = Math.floor(diff_ms / milisec);
+    let converter_ms = Math.ceil(diff_ms / milisec);
     
     console.log(`A diferença de dia(s) é ${converter_ms} dia(s)`);
 

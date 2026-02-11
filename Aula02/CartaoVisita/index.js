@@ -16,8 +16,6 @@ function MudarCartao() {
 
     inputNome.addEventListener("input", () => {
         let valorNome = inputNome.value
-
-
         nome.innerHTML = valorNome
     })
 
