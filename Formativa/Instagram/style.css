@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html{
+    font-family: "Poppins";
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 70px;
+}
+
+li {
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.Profile{
+    margin-top: 300px;
+}
+
+.NavBar{
+    /* border-right: solid .5px #999999; */
+    border-radius: 2px;
+}
+
+.Posts{
+    height: 60vh;
+}
+
+.Story{
+    height: 11vh;
+}
+
+.InstaIcon{
+    width: 3vw;
+}
+
+.Posts img{
+    height: 72vh;   
+    object-fit: cover;
+    width: 100%;
+}
