@@ -10,16 +10,23 @@ ul {
 }
 
 li {
-    margin-top: 40px;
-    font-size: 20px;
+    padding: 12px 15px; 
+    margin-bottom: 5px; 
+    font-size: 18px; 
+    border-radius: 25px; 
+    transition: background-color 0.2s ease;
+    cursor: pointer; 
+}
+
+li:hover {
+    background-color: #f2f2f2; 
 }
 
 .Profile{
-    margin-top: 300px;
+    margin-top: 250px;
 }
 
 .NavBar{
-    /* border-right: solid .5px #999999; */
     border-radius: 2px;
 }
 
@@ -27,16 +34,147 @@ li {
     height: 60vh;
 }
 
+.Stories{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1rem;
+
+    max-width: calc(55vh + 4rem);
+    margin: 0 auto;
+    padding: 10px 0;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.Stories::-webkit-scrollbar{
+    display: none;
+}
+
 .Story{
     height: 11vh;
+    width: 11vh;
+    flex: 0 0 auto;
+    background-image: url('Imgs/CorujaStory.jpg');
+    background-size: cover;
+    border: 2px solid #d92d7b;
+
+    transition: transform 0.2s ease-out; 
+}
+
+
+.Story:hover{
+    transform: scale(1.1) ;
+ 
 }
 
 .InstaIcon{
-    width: 3vw;
+    width: auto;
+    height: 6vh;
 }
 
 .Posts img{
-    height: 72vh;   
+    height: 60vh;   
     object-fit: cover;
     width: 100%;
+    /* border-radius: 20px; */
+    border: .5;
+}
+
+.Posts{
+    overflow-y: auto;
+    height: calc(100vh - 220px);
+}
+
+.Posts::-webkit-scrollbar{
+    display: none;
+}
+
+.PostIndiv{
+    margin: auto 0px 40px 0px;
+    border-bottom: 1px solid #efefef;
+    padding-bottom: 20px;
+}
+
+.PostIndiv i {
+    font-size: 1.6rem;
+    margin-right: 15px; 
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.PostIndiv i:hover {
+    color: #8e8e8e; 
+}
+
+.Descricao {
+    font-weight: 400;
+    font-size: 14px; 
+}
+.Descricao p {
+    margin-bottom: 5px;
+}
+
+.Perfil{
+    height: 7vh;
+    width: 7vh;
+    flex: 0 0 auto;
+    background-image: url('Imgs/PassaroPerfil.jpg');
+    background-size: cover;
+    border: 2px solid #d92d7b;
+    margin-bottom: 10px;
+}
+
+
+.Search {
+    border-radius: 10px;
+    background-color: #efefef;
+    padding: 10px 15px; 
+    text-align: start;
+    color: #8e8e8e; 
+    cursor: text;
+}
+video{
+    width: 100%;
+    height: 60vh;
+}
+
+video:hover{
+    cursor: pointer;
+}
+
+.Sugestao{
+    height: 6vh;
+    width: 6vh;
+    flex: 0 0 auto;
+    background-image: url('Imgs/CorujaStory.jpg');
+    background-size: cover;
+    border: 2px solid #d92d7b;
+}
+
+
+.text-shadow {
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+}
+
+
+.carousel-control-prev i, .carousel-control-next i {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black !important;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 1.2rem !important; 
+}
+
+
+.carousel-control-prev, 
+.carousel-control-next {
+    opacity: 0 !important; 
+    transition: opacity 0.3s ease; 
+}
+
+.carousel-control-prev:hover, 
+.carousel-control-next:hover {
+    opacity: 1 !important; 
 }
