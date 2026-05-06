@@ -1,72 +1,278 @@
+/* --- Variables & Reset --- */
 :root {
---low: #28a745;
---medium: #ffc107;
---high: #dc3545;
+  /* Modern Palette */
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --bg-app: #f3f4f6;
+  --white: #ffffff;
+  
+  /* Priority Colors (More Vibrant) */
+  --low: #10b981;
+  --medium: #f59e0b;
+  --high: #ef4444;
+  
+  /* Text Colors */
+  --text-main: #1f2937;
+  --text-muted: #6b7280;
+  
+  /* Shadows & Radius */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+  --radius: 12px;
+  --transition: all 0.2s ease-in-out;
 }
 
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- Layout --- */
 .app-container {
-max-width: 800px;
-margin: 2rem auto;
-padding: 0 1rem;
-font-family: system-ui, sans-serif;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-header { text-align: center; margin-bottom: 2rem; }
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: var(--primary);
+  letter-spacing: -0.025em;
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+}
+
+/* --- Global Input & Select Styling --- */
+input, select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+  outline: none;
+  background-color: var(--white);
+  font-family: inherit;
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* --- Form & Search Section --- */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
 
 .form-section form {
-display: flex;
-gap: 10px;
-background: #f8f9fa;
-padding: 20px;
-border-radius: 8px;
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
 }
-.form-section input { flex: 3; padding: 10px; }
 
+.form-section input { flex: 3; }
+.form-section select { flex: 1; cursor: pointer; }
 
-.form-section select { flex: 1; }
+.form-section button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
 
+.form-section button[type="submit"]:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* Specific Search Input styling */
+.form-section > input {
+  width: 100%;
+  background-color: #f9fafb;
+}
+
+/* --- Filters --- */
 .filter-section {
-display: flex;
-justify-content: center;
-gap: 10px;
-margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-section button {
+  padding: 0.5rem 1.25rem;
+  border: 1px solid #e5e7eb;
+  background: var(--white);
+  border-radius: 9999px;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-section button:hover {
+  background: #f9fafb;
+  color: var(--text-main);
 }
 
 .filter-section button.active {
-background: #333;
-color: white;
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
 }
 
+/* --- Task Grid & Cards --- */
 .task-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .task-card {
-padding: 15px;
-border-radius: 8px;
-border-left: 8px solid #ccc;
-background: white;
-box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+  background: var(--white);
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  border-top: 5px solid #ccc;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: var(--transition);
 }
 
+.task-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
 
 .task-card.baixa { border-color: var(--low); }
 .task-card.média { border-color: var(--medium); }
 .task-card.alta { border-color: var(--high); }
-.task-card.done { opacity: 0.6; background: #e9ecef; }
 
-.task-content h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
-.task-content span { display: block; font-size: 0.8rem; font-weight: bold; }
-
-.task-actions {
-margin-top: 15px;
-display: flex;
-justify-content: space-between;
+.task-card.done {
+  opacity: 0.7;
+  background: #f9fafb;
+  border-color: #d1d5db;
 }
 
-.task-actions button.delete { background: #ff4d4d; }
+.task-card.done h3 {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.task-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+.task-content span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.task-content small {
+  display: block;
+  margin-top: 0.25rem;
+  color: #9ca3af;
+}
+
+/* --- Edit Mode Styles --- */
+.edit-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-actions select {
+  flex: 1;
+}
+
+.btn-save {
+  background-color: var(--primary) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background: transparent !important;
+  border: 1px solid #e5e7eb !important;
+  color: var(--text-muted) !important;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* --- Card Actions --- */
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 1rem;
+}
+
+.task-actions button {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  background: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.task-actions button:hover {
+  background: #f9fafb;
+}
+
+.task-actions button.delete {
+  color: var(--high);
+}
+
+.task-actions button.delete:hover {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
