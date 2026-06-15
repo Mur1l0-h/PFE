@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EduTech | Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    >
+  </head>
+  <body class="bg-body-tertiary">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top shadow-sm">
+      <div class="container-fluid gap-3">
+        <a class="navbar-brand fw-bold" href="#" aria-label="Página inicial da EduTech">
+          EduTech
+        </a>
+
+        <form class="d-flex flex-grow-1 mx-md-4" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Pesquisar alunos, cursos..."
+            aria-label="Pesquisar"
+          >
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
+        </form>
+
+        <div class="d-flex align-items-center gap-2 text-white">
+          <div
+            class="bg-primary rounded-circle d-flex align-items-center justify-content-center fw-bold p-2"
+            aria-label="Avatar de Mariana Silva"
+          >
+            MS
+          </div>
+          <span class="d-none d-md-inline">Mariana Silva</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid pt-5">
+      <div class="row pt-4 min-vh-100">
+        <aside class="col-lg-2 d-none d-lg-block bg-white border-end p-3">
+          <h2 class="fs-6 text-uppercase text-secondary mb-3">Menu principal</h2>
+          <nav class="nav nav-pills flex-column gap-2">
+            <a class="nav-link active" aria-current="page" href="#">Visão geral</a>
+            <a class="nav-link text-dark" href="#">Alunos</a>
+            <a class="nav-link text-dark" href="#">Cursos</a>
+            <a class="nav-link text-dark" href="#">Professores</a>
+            <a class="nav-link text-dark" href="#">Relatórios</a>
+            <a class="nav-link text-dark" href="#">Configurações</a>
+          </nav>
+        </aside>
+
+        <main class="col-12 col-lg-10 p-3 p-md-4">
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+            <div>
+              <h1 class="h3 mb-1">Dashboard administrativo</h1>
+              <p class="text-secondary mb-0">Acompanhe os principais dados da plataforma.</p>
+            </div>
+            <button
+              type="button"
+              class="btn btn-dark align-self-start align-self-md-center"
+              data-bs-toggle="modal"
+              data-bs-target="#novoAlunoModal"
+            >
+              Cadastrar Novo Aluno
+            </button>
+          </div>
+
+          <section aria-labelledby="metricas-heading" class="mb-4">
+            <h2 id="metricas-heading" class="visually-hidden">Métricas principais</h2>
+            <div class="row g-3">
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card text-bg-primary h-100 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-title mb-2">Alunos ativos</p>
+                    <p class="display-6 fw-bold mb-0">1.248</p>
+                    <small>+8% neste mês</small>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card text-bg-success h-100 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-title mb-2">Cursos publicados</p>
+                    <p class="display-6 fw-bold mb-0">36</p>
+                    <small>3 novos cursos</small>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card text-bg-warning h-100 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-title mb-2">Taxa de retenção</p>
+                    <p class="display-6 fw-bold mb-0">87%</p>
+                    <small>Meta mensal: 90%</small>
+                  </div>
+                </article>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <article class="card text-bg-danger h-100 shadow-sm">
+                  <div class="card-body">
+                    <p class="card-title mb-2">Chamados abertos</p>
+                    <p class="display-6 fw-bold mb-0">12</p>
+                    <small>4 com alta prioridade</small>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section aria-labelledby="avisos-heading" class="mb-4">
+            <h2 id="avisos-heading" class="h5 mb-3">Avisos importantes</h2>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Manutenção programada:</strong> a plataforma ficará indisponível hoje, das 23h às 00h.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+            </div>
+            <div class="alert alert-info mb-0" role="alert">
+              As inscrições para o curso de Desenvolvimento Web encerram nesta sexta-feira.
+            </div>
+          </section>
+
+          <section class="card shadow-sm" aria-labelledby="alunos-heading">
+            <div class="card-header bg-white d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-2 p-3">
+              <div>
+                <h2 id="alunos-heading" class="h5 mb-1">Alunos recentes</h2>
+                <p class="text-secondary small mb-0">Últimos alunos cadastrados na plataforma.</p>
+              </div>
+              <button type="button" class="btn btn-outline-primary btn-sm">Exportar lista</button>
+            </div>
+
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nome</th>
+                      <th scope="col">Curso</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">#1048</th>
+                      <td>Ana Souza</td>
+                      <td>Desenvolvimento Web</td>
+                      <td><span class="badge bg-success">Pago</span></td>
+                      <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações para Ana Souza">
+                          <button type="button" class="btn btn-outline-primary">Editar</button>
+                          <button type="button" class="btn btn-outline-danger">Excluir</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">#1047</th>
+                      <td>Bruno Lima</td>
+                      <td>UX/UI Design</td>
+                      <td><span class="badge bg-warning text-dark">Pendente</span></td>
+                      <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações para Bruno Lima">
+                          <button type="button" class="btn btn-outline-primary">Editar</button>
+                          <button type="button" class="btn btn-outline-danger">Excluir</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">#1046</th>
+                      <td>Carla Mendes</td>
+                      <td>Marketing Digital</td>
+                      <td><span class="badge bg-success">Pago</span></td>
+                      <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações para Carla Mendes">
+                          <button type="button" class="btn btn-outline-primary">Editar</button>
+                          <button type="button" class="btn btn-outline-danger">Excluir</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">#1045</th>
+                      <td>Diego Santos</td>
+                      <td>Data Science</td>
+                      <td><span class="badge bg-secondary">Inativo</span></td>
+                      <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações para Diego Santos">
+                          <button type="button" class="btn btn-outline-primary">Editar</button>
+                          <button type="button" class="btn btn-outline-danger">Excluir</button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">#1044</th>
+                      <td>Eduarda Rocha</td>
+                      <td>Gestão de Projetos</td>
+                      <td><span class="badge bg-success">Pago</span></td>
+                      <td>
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Ações para Eduarda Rocha">
+                          <button type="button" class="btn btn-outline-primary">Editar</button>
+                          <button type="button" class="btn btn-outline-danger">Excluir</button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card-footer bg-white d-flex justify-content-end p-3">
+              <nav aria-label="Paginação da lista de alunos">
+                <ul class="pagination mb-0">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" aria-disabled="true">Anterior</a>
+                  </li>
+                  <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">Próxima</a></li>
+                </ul>
+              </nav>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="novoAlunoModal"
+      tabindex="-1"
+      aria-labelledby="novoAlunoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5" id="novoAlunoModalLabel">Cadastrar Novo Aluno</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+
+          <form class="needs-validation" novalidate>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="nomeCompleto" class="form-label">Nome completo</label>
+                <input type="text" class="form-control" id="nomeCompleto" required>
+                <div class="invalid-feedback">Informe o nome completo do aluno.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="curso" class="form-label">Curso</label>
+                <select class="form-select" id="curso" required>
+                  <option selected disabled value="">Selecione um curso...</option>
+                  <option>Desenvolvimento Web</option>
+                  <option>UX/UI Design</option>
+                  <option>Marketing Digital</option>
+                  <option>Data Science</option>
+                  <option>Gestão de Projetos</option>
+                </select>
+                <div class="invalid-feedback">Selecione um curso.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="fotoPerfil" class="form-label">Foto de perfil</label>
+                <input class="form-control" type="file" id="fotoPerfil" accept="image/*" required>
+                <div class="invalid-feedback">Selecione uma foto de perfil.</div>
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-dark">Cadastrar aluno</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (() => {
+        "use strict";
+
+        const forms = document.querySelectorAll(".needs-validation");
+
+        Array.from(forms).forEach((form) => {
+          form.addEventListener("submit", (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+
+            form.classList.add("was-validated");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
